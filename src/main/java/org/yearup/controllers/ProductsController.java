@@ -85,7 +85,7 @@ public class ProductsController
     {
         try
         {
-            productDao.create(product);
+            productDao.update(id,product); //#Bug 2 :create method has been changed with update and id added.
         }
         catch(Exception ex)
         {
