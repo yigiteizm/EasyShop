@@ -51,7 +51,6 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error retrieving category.");
         }
     }
-
     // the url to return all products in category 1 would look like this
     // https://localhost:8080/categories/1/products
     @GetMapping("/categories/{categoryId}/products")
@@ -63,7 +62,6 @@ public class CategoriesController {
         }
         return products;
     }
-
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
     @PostMapping
@@ -76,7 +74,6 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error adding new category.", ex);
         }
     }
-
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
     @PutMapping("/{id}")
@@ -88,7 +85,6 @@ public class CategoriesController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error updating category with ID: " + id, ex);
         }
     }
-
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
