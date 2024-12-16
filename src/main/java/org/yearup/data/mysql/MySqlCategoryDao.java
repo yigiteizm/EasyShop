@@ -66,11 +66,36 @@
         }
 
         @Override
-        public Category create(Category category)
-        {
-            // create a new category
-            return null;
+        public Category create(Category category) {
+            String sql = "INSERT INTO categories (name, description) VALUES (?, ?)";
+
+            try (Connection connection = getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+
+
+                statement.setString(1, category.getName());
+                statement.setString(2, category.getDescription());
+
+
+                int rowsAffected = statement.executeUpdate();
+                if (rowsAffected == 0) { 
+                    throw new SQLException("Insert failed, no rows affected!");
+                }
+
+
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        category.setCategoryId(generatedKeys.getInt(1));
+                    }
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException("Error inserting new category", e);
+            }
+
+            return category;
         }
+
 
         @Override
         public void update(int categoryId, Category category)
