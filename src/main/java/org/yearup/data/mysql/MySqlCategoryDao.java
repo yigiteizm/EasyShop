@@ -59,7 +59,7 @@
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException("Error retrieving category with ID: " + categoryId, e);
+                e.printStackTrace();
             }
 
             return null;
@@ -78,7 +78,7 @@
 
 
                 int rowsAffected = statement.executeUpdate();
-                if (rowsAffected == 0) { 
+                if (rowsAffected == 0) {
                     throw new SQLException("Insert failed, no rows affected!");
                 }
 
@@ -90,7 +90,7 @@
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException("Error inserting new category", e);
+                e.printStackTrace();
             }
 
             return category;
@@ -100,7 +100,25 @@
         @Override
         public void update(int categoryId, Category category)
         {
-            // update category
+            String sql = "UPDATE categories SET name = ?, description = ? WHERE category_id = ?";
+
+            try (Connection connection = getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql)) {
+
+                // Set parameters
+                statement.setString(1, category.getName());
+                statement.setString(2, category.getDescription());
+                statement.setInt(3, categoryId);
+
+                // Execute update
+                int rowsAffected = statement.executeUpdate();
+                if (rowsAffected == 0) {
+                    throw new SQLException("Update failed, no rows affected!");
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
