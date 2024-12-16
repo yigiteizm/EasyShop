@@ -18,8 +18,7 @@ import java.util.List;
 @RequestMapping("/categories")
 // Allow cross-origin requests
 @CrossOrigin
-public class CategoriesController
-{
+public class CategoriesController {
     private CategoryDao categoryDao;
     private ProductDao productDao;
 
@@ -30,9 +29,9 @@ public class CategoriesController
         this.productDao = productDao;
 
     }
+
     @GetMapping
-    public List<Category> getAll()
-    {
+    public List<Category> getAll() {
         try {
             return categoryDao.getAllCategories();
         } catch (Exception ex) {
@@ -41,8 +40,7 @@ public class CategoriesController
     }
 
     @GetMapping("/{id}")
-    public Category getById(@PathVariable int id)
-    {
+    public Category getById(@PathVariable int id) {
         try {
             Category category = categoryDao.getById(id);
             if (category == null) {
@@ -71,14 +69,10 @@ public class CategoriesController
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category addCategory(@RequestBody Category category)
-    {
-        try
-        {
+    public Category addCategory(@RequestBody Category category) {
+        try {
             return categoryDao.create(category);
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error adding new category.", ex);
         }
     }
@@ -87,14 +81,10 @@ public class CategoriesController
     // add annotation to ensure that only an ADMIN can call this function
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public void updateCategory(@PathVariable int id, @RequestBody Category category)
-    {
-        try
-        {
+    public void updateCategory(@PathVariable int id, @RequestBody Category category) {
+        try {
             categoryDao.update(id, category);
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error updating category with ID: " + id, ex);
         }
     }
@@ -102,8 +92,17 @@ public class CategoriesController
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
-    public void deleteCategory(@PathVariable int id)
-    {
-        // delete the category by id
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void deleteCategory(@PathVariable int id) {
+        try {
+            Category category = categoryDao.getById(id);
+            if (category == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found with ID: " + id);
+            }
+            categoryDao.delete(id);
+        } catch (Exception ex) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error deleting category with ID: " + id, ex);
+        }
     }
 }
