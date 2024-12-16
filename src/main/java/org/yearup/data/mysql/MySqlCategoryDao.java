@@ -104,13 +104,9 @@
 
             try (Connection connection = getConnection();
                  PreparedStatement statement = connection.prepareStatement(sql)) {
-
-                // Set parameters
                 statement.setString(1, category.getName());
                 statement.setString(2, category.getDescription());
                 statement.setInt(3, categoryId);
-
-                // Execute update
                 int rowsAffected = statement.executeUpdate();
                 if (rowsAffected == 0) {
                     throw new SQLException("Update failed, no rows affected!");
@@ -124,7 +120,19 @@
         @Override
         public void delete(int categoryId)
         {
-            // delete category
+            String sql = "DELETE FROM categories WHERE category_id = ?";
+
+            try (Connection connection = getConnection();
+                 PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, categoryId);
+                int rowsAffected = statement.executeUpdate();
+                if (rowsAffected == 0) {
+                    throw new SQLException("Delete failed, no rows affected!");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
         private Category mapRow(ResultSet row) throws SQLException
