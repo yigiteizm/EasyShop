@@ -15,7 +15,7 @@ import java.util.List;
 // REST controller annotation
 @RestController
 // Base URL: http://localhost:8080/categories
-@RequestMapping("/categories")
+@RequestMapping("categories")
 // Allow cross-origin requests
 @CrossOrigin
 public class CategoriesController {
@@ -39,18 +39,28 @@ public class CategoriesController {
         }
     }
 
-    @GetMapping("/{id}")
-    public Category getById(@PathVariable int id) {
-        try {
-            Category category = categoryDao.getById(id);
-            if (category == null) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found.");
-            }
-            return category;
-        } catch (Exception ex) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error retrieving category.");
+    @GetMapping("{id}")
+    @PreAuthorize("permitAll()")
+    public Category getById(@PathVariable int id )
+    {
+        Category ct = null;
+        try
+        {
+            ct = categoryDao.getById(id);
         }
+        catch(Exception ex)
+        {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        if(ct == null)
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        return ct;
     }
+
     // the url to return all products in category 1 would look like this
     // https://localhost:8080/categories/1/products
     @GetMapping("/categories/{categoryId}/products")
@@ -90,6 +100,7 @@ public class CategoriesController {
     // add annotation to ensure that only an ADMIN can call this function
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.NO_CONTENT) //204 code  returned after successful delete
     public void deleteCategory(@PathVariable int id) {
         try {
             Category category = categoryDao.getById(id);
