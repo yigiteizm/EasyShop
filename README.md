@@ -34,7 +34,7 @@ Discover the Easy Shop Application a Java powered **RESTful API** designed to op
 
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
-
+- MySQL Database: Set up a MySQL database for the project.
 
 ### Running the Application in IntelliJ
 
