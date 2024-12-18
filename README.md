@@ -51,8 +51,10 @@ Follow these steps to get your application running within IntelliJ IDEA:
 ---
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Amazon Corretto version 17.0.12.
+- Spring Boot: For building the RESTful API and handling application configuration.
+- MySQL: As the database for data persistence.
+- Maven: For project management and dependency management.
 
 ## Demo
 
