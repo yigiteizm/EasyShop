@@ -26,12 +26,15 @@ Discover the Easy Shop Application a Java powered **RESTful API** designed to op
 ---
 ## Setup
 
-Instructions on how to set up and run the project using IntelliJ IDEA.
+- IntelliJ IDEA: Clone project, open in IntelliJ, configure JDK, and run EasyshopApplication.main().
+- MySQL: Install MySQL, create 'EasyShop' database, configure connection in application.properties, and initialize with SQL scripts.
+- Postman: Install Postman, import API collection, set environment variables, and test API endpoints.
 
 ### Prerequisites
 
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
+
 
 ### Running the Application in IntelliJ
 
