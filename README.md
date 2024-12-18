@@ -1,10 +1,14 @@
-# Project Title
+# Easy Shop
 
-## Description of the Project
-
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
-
+## Description of the Easy Shop Project
+Discover the Easy Shop Application a Java powered **RESTful API** designed to optimize e-commerce management:
+### Admin Features Include:
+Full **CRUD** capabilities for products and categories.
+Secure role-based access control.
+### User Features Include:
+Product filtering by price range.
+Adding items to cart for a smooth shopping experience.
+---
 ## User Stories
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
@@ -12,6 +16,7 @@ List the user stories that guided the development of your application. Format th
 - As a user, I want to be able to input my data, so that the application can process it accordingly.
 - As a user, I want to receive immediate feedback, so I can understand what to do next.
 
+---
 ## Setup
 
 Instructions on how to set up and run the project using IntelliJ IDEA.
