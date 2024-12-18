@@ -3,18 +3,25 @@
 ## Description of the Easy Shop Project
 Discover the Easy Shop Application a Java powered **RESTful API** designed to optimize e-commerce management:
 ### Admin Features Include:
-Full **CRUD** capabilities for products and categories.
-Secure role-based access control.
+- Full **CRUD** capabilities for products and categories.
+- Secure role-based access control.
 ### User Features Include:
-Product filtering by price range.
-Adding items to cart for a smooth shopping experience.
+- Product filtering by price range.
+- Adding items to cart for a smooth shopping experience.
 ---
 ## User Stories
-
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As an admin, I want to **view** all products and categories, so that I can monitor inventory and organization.
+- As an admin, I want to **update** existing categories, so that I can keep the product structure accurate and organized.
+- As an admin, I want to **update** product details, so that I can reflect changes or updates correctly.
+- As an admin, I want to **create** new categories, so that I can group products under relevant categories.
+- As an admin, I want to **create** new products, so that I can give users more options to choose from.
+- As an admin, I want to **delete** categories that are no longer needed, so that I can keep the product organization clean and efficient.
+- As an admin, I want to **delete** products that are no longer needed, so that I can keep the product organization clean and efficient.
+- As a user, I want to **view** all available product categories, so that I can explore products under those categories.
+- As a user, I want to **view** my shopping cart, so that I can see the items I plan to purchase.
+- As a user, I want to **update** product quantities in my cart, so that I can adjust my order as needed.
+- As a user, I want to **filter** products by price range, so that I can find items within my budget.
+- As a user, I want to **remove** items from my cart, so that I can manage my shopping list effectively before checkout.
 
 ---
 ## Setup
