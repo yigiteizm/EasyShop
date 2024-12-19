@@ -1,7 +1,9 @@
-# Easy Shop
+# Easy Shop E-Commerce Project
 
 ## Description of the Easy Shop Project
-Discover the Easy Shop Application a Java powered **RESTful API** designed to optimize e-commerce management:
+EasyShop Backend is a **RESTful API** for e-commerce, enabling admin management of categories and products, with secure role-based access. 
+It supports product browsing for all users, designed for easy front-end integration.
+
 ### Admin Features Include:
 - Full **CRUD** capabilities for products and categories.
 - Secure role-based access control.
@@ -26,64 +28,89 @@ Discover the Easy Shop Application a Java powered **RESTful API** designed to op
 ---
 ## Setup
 
-- IntelliJ IDEA: Clone project, open in IntelliJ, configure JDK, and run EasyshopApplication.main().
-- MySQL: Install MySQL, create 'EasyShop' database, configure connection in application.properties, and initialize with SQL scripts.
-- Postman: Install Postman, import API collection, set environment variables, and test API endpoints.
+- **IntelliJ IDEA:** Clone project, open in IntelliJ, configure JDK, and run EasyshopApplication.main().
+- **MySQL:** Install MySQL, create 'EasyShop' database, configure connection in application.properties, and initialize with SQL scripts.
+- **Postman:** Install Postman, import API collection, set environment variables, and test API endpoints.
 
 ---
-### Prerequisites
+## Prerequisites
 
-- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
-- Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
-- MySQL Database: Set up a MySQL database for the project.
+- **IntelliJ IDEA**: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
+- **Java SDK:** Make sure Java SDK is installed and configured in IntelliJ.
+- **MySQL Workbench**: Set up a MySQL database for the project.
 
 ---
-### Running the Application in IntelliJ
+## Running the Application in IntelliJ
 
 Follow these steps to get your application running within IntelliJ IDEA:
 
-1. Open IntelliJ IDEA.
-2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
+1. Open **IntelliJ IDEA.**
+2. Select **"Open"** and navigate to the directory where you cloned or downloaded the project.
 3. After the project opens, wait for IntelliJ to index the files and set up the project.
-4. Find the main class with the public static void main(String[] args) method. In this project, it's EasyshopApplication located in the org.yearup package.
-5. Right-click on the EasyshopApplication.java file and select 'Run 'EasyshopApplication.main()'' to start the application. 
+4. Find the **main class** with the **public static void main(String[] args) method**. In this project, it's **EasyshopApplication** located in the **org.yearup package**.
+5. Right-click on the **EasyshopApplication.java** file and select 'Run 'EasyshopApplication.main()'' to start the application. 
 
 ---
 ## Technologies Used
 
-- Java: Amazon Corretto version 17.0.12.
-- Spring Boot: For building the RESTful API and handling application configuration.
-- MySQL: As the database for data persistence.
-- Maven: For project management and dependency management.
+- **Java:** Amazon Corretto version 17.0.12.
+- **Spring Boot:** For building the **RESTful API** and handling application configuration.
+- **MySQL:** As the database for **data persistence**.
+- **Maven:** For **project management** and dependency management.
 
+---
 ## Demo
+### Postman Run Result
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+![Postman Collections Passed.JPG](imgs%2FPostman%20Collections%20Passed.JPG)
+### Website General Appearance
+
+![Website.JPG](imgs%2FWebsite.JPG)
+
+### Categorization Feature
+
+![Categorize.JPG](imgs%2FCategorize.JPG)
+
+### Price Range Filtering
+
+![Filtering.JPG](imgs%2FFiltering.JPG)
 
 
 
+---
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Integration of a Recommendation Engine: This would allow the system to provide recommendations to logged-in users based on their behavior and purchase history, enhancing the shopping experience.
+- Mobile App Development: Creating a dedicated mobile application for both iOS and Android to increase accessibility and user engagement.
 
+---
 ## Resources
 
-List resources such as tutorials, articles, or documentation that helped you during the project.
+- **Tutorials and Documentation:**
+    - [Java Programming Tutorial](https://www.w3schools.com/java)
+    - [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
+    - [MySQL Documentation](https://dev.mysql.com/doc/)
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- **Learning Platforms:**
+    - [Year Up United](https://yearup.brightspace.com/d2l/home/8605)
 
+- **Code Examples and References:**
+    - [Java Code Library](https://www.baeldung.com/java-current-month-start-date#:~:text=Using%20the%20LocalDate%20Class,date%20with%20the%20day%20altered.)
+    - [GeeksforGeeks Java](https://www.geeksforgeeks.org/java/)
+
+- **Community Support:**
+    - [Stack Overflow - Java](https://stackoverflow.com/questions/tagged/java)
+
+---
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- **Yigit Demirci** Project Developer
 
+---
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
+- Thank you to **Raymond** for continuous support and guidance. 
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+---
