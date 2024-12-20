@@ -1,7 +1,7 @@
 # Easy Shop E-Commerce Project
 
 ## Description of the Easy Shop Project
-EasyShop Backend is a **RESTful API** for e-commerce, enabling admin management of categories and products, with secure role-based access. 
+EasyShop is a **RESTful API** for e-commerce, enabling admin management of categories and products, with secure role-based access. 
 It supports product browsing for all users, designed for easy front-end integration.
 
 ### Admin Features Include:
@@ -12,6 +12,7 @@ It supports product browsing for all users, designed for easy front-end integrat
 - Adding items to cart for a smooth shopping experience.
 ---
 ## User Stories
+### As an Admin Stories:
 - As an admin, I want to **view** all products and categories, so that I can monitor inventory and organization.
 - As an admin, I want to **update** existing categories, so that I can keep the product structure accurate and organized.
 - As an admin, I want to **update** product details, so that I can reflect changes or updates correctly.
@@ -19,6 +20,7 @@ It supports product browsing for all users, designed for easy front-end integrat
 - As an admin, I want to **create** new products, so that I can give users more options to choose from.
 - As an admin, I want to **delete** categories that are no longer needed, so that I can keep the product organization clean and efficient.
 - As an admin, I want to **delete** products that are no longer needed, so that I can keep the product organization clean and efficient.
+### As a user Stories:
 - As a user, I want to **view** all available product categories, so that I can explore products under those categories.
 - As a user, I want to **view** my shopping cart, so that I can see the items I plan to purchase.
 - As a user, I want to **update** product quantities in my cart, so that I can adjust my order as needed.
